@@ -13,14 +13,18 @@ Start with this Markdown file `example.md`:
 
 Run pandoc:
 
-    pandoc -s --toc -f markdown -t html --filter img-to-zoomable-link.py -c pandoc.css -o example.html example.md
+    pandoc --standalone --table-of-contents \
+        --from=markdown --to=html \
+        --filter=img-to-zoomable-link.py --css=pandoc.css \
+        --output=example.html example.md
 
 This creates `example.html` with nice CSS and zoomable images:
 
 ![](Images/highslide-example.gif)
 
 - (You may have to enable Javascript on your browser.)
-- (In the Chrome browser, it is easiest to run a local webserver and allow Javascript on it: `$ python -m SimpleHTTPServer`)
+- (In the Chrome browser, it is easiest to run a local webserver and allow Javascript on it:) 
+    - `$ python -m SimpleHTTPServer`
 
 
 Repo Contents
@@ -32,12 +36,18 @@ Repo Contents
     - `http://highslide.com/download/highslide-5.0.0.zip`
 - `pandoc.css` is a CSS file with some nice styling.
 - `img-to-zoomable-link.py` is a pandoc filter that wraps each HTML image tag in a highslide Javascript function to display the image as a thumbnail.
+    - This requires the `pandocfilters` Python package:
+        - <https://github.com/jgm/pandocfilters>
+        - `pip install pandocfilters`
 
 
 
 Notes
 ------
 
+- By default, the file `img-to-zoomable-link.py` needs to be in the same directory as the generated HTML file. To prevent copying `img-to-zoomable-link.py` multiple places, consider putting it into `~/Utilities/` and providing the absolute path to the `pandoc` command.
+
+- The file `pandoc.css` and the folder `highslide/` need to be in the same directory as the HTML file.
 
 - Each markdown file needs to start with a little YAML that instructs pandoc to include the highslide JS library:
 
