@@ -1,6 +1,6 @@
 # Nice documentation with highslide and pandoc
 
-An example of writing nice documentation in markdown, converting to HTML with pandoc, and using highslide Javascript for zoomable image thumbnails.
+An example of writing nice documentation in markdown, converting to HTML with pandoc, and using the "highslide" Javascript library for zoomable image thumbnails.
 
 
 Example
@@ -41,11 +41,11 @@ Notes
 
 - Each markdown file needs to start with a little YAML that instructs pandoc to include the highslide JS library:
 
-    ---
-    title: Example document
-    header-includes:
-        <script type="text/javascript" src="highslide/highslide.js" ></script>
-    ---
+        ---
+        title: Example document
+        header-includes:
+            <script type="text/javascript" src="highslide/highslide.js" ></script>
+        ---
 
 - For PDF output, need "backslash space" after each img to put img placement precisely, like this:
 
