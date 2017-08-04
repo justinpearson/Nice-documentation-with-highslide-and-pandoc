@@ -49,7 +49,7 @@ Notes
 
 - For PDF output, need "backslash space" after each img to put img placement precisely, like this:
 
-    ![](Images/ScreenShot2017-02-01-16-52-05.png)\ 
+    `![](Images/ScreenShot2017-02-01-16-52-05.png)\ `
 
 - Using Submline Text? Assign a keystroke to convert markdown to HTML:
     - Tools > Build System > New Build System...
