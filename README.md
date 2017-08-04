@@ -59,7 +59,7 @@ Notes
             <script type="text/javascript" src="highslide/highslide.js" ></script>
         ---
 
-    - Note: 
+    - Note: YAML wasn't supported in old versions of pandoc; I'm using 1.19.2.1.
 
 - For PDF output, need "backslash space" after each img to put img placement precisely, like this:
 
