@@ -18,13 +18,15 @@ Run pandoc:
         --filter=img-to-zoomable-link.py --css=pandoc.css \
         --output=example.html example.md
 
-This creates `example.html` with nice CSS and zoomable images:
+This creates `example.html` with a table of contents, nice CSS, and zoomable images:
 
 ![](Images/highslide-example.gif)
 
 - (You may have to enable Javascript on your browser.)
-- (In the Chrome browser, it is easiest to run a local webserver and allow Javascript on it:) 
+- (In the Chrome browser, it is easiest to run a local webserver and allow Javascript on 0.0.0.0:) 
+    - From this repo directory:
     - `$ python -m SimpleHTTPServer`
+    - Then browse to `0.0.0.0:8000/example.html`
 
 
 Repo Contents
@@ -35,10 +37,10 @@ Repo Contents
 - `highslide.js` is a Javascript library for displaying images as thumbnails that zoom in when you click on them.
     - `http://highslide.com/download/highslide-5.0.0.zip`
 - `pandoc.css` is a CSS file with some nice styling.
-- `img-to-zoomable-link.py` is a pandoc filter that wraps each HTML image tag in a highslide Javascript function to display the image as a thumbnail.
-    - This requires the `pandocfilters` Python package:
-        - <https://github.com/jgm/pandocfilters>
+- `img-to-zoomable-link.py` is a pandoc filter that wraps each HTML image tag in a highslide Javascript function to display the image as a zoomable thumbnail.
+    - This pandoc filter requires the `pandocfilters` Python package:
         - `pip install pandocfilters`
+        - <https://github.com/jgm/pandocfilters>
 
 
 
