@@ -59,6 +59,8 @@ Notes
             <script type="text/javascript" src="highslide/highslide.js" ></script>
         ---
 
+    - Note: 
+
 - For PDF output, need "backslash space" after each img to put img placement precisely, like this:
 
     `![](Images/ScreenShot2017-02-01-16-52-05.png)\ `
@@ -67,8 +69,8 @@ Notes
     - Tools > Build System > New Build System...
     - Paste this text:
 
-        {
-            "shell_cmd": "pandoc -s --toc -f markdown -t html --filter img-to-zoomable-link.py -c pandoc.css -o \"$file_base_name.html\" \"$file_name\" " 
-        }
+            {
+                "shell_cmd": "pandoc -s --toc -f markdown -t html --filter img-to-zoomable-link.py -c pandoc.css -o \"$file_base_name.html\" \"$file_name\" " 
+            }
 
     - Save as `my-markdown-to-html`, now it appears in `Tools` > `Build System`.
